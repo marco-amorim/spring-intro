@@ -6,13 +6,15 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class SpringIntroApplication {
 
-	public static void main(String[] args) {
-		BinarySearchImpl binarySearch = new BinarySearchImpl();
-		int result = binarySearch.binarySearch(new int[] {12, 4, 6}, 3);
+    public static void main(String[] args) {
+        BinarySearchImpl binarySearch = new BinarySearchImpl(new QuickSortAlgorithm());
 
-		System.out.println(result);
+        int result = binarySearch.binarySearch(new int[]{12, 4, 6}, 3);
+        // com.spring.intro.springintro.BubbleSortAlgorithm@3901d134
 
-		SpringApplication.run(SpringIntroApplication.class, args);
-	}
+        System.out.println(result);
+
+        SpringApplication.run(SpringIntroApplication.class, args);
+    }
 
 }
