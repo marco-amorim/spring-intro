@@ -7,13 +7,11 @@ import org.springframework.stereotype.Component;
 public class BinarySearchImpl {
     // Dummy algorithm, not really implementing any logic to search!
 
+    // For dependency injection we can use either Setter, a normal Constructor or none of them
+    // there's not much difference with the newest versions of spring, so the most used approach
+    // is as shown below, simply using @Autowired is enough
     @Autowired
     private SortAlgorithm sortAlgorithm;
-
-    public BinarySearchImpl(SortAlgorithm sortAlgorithm) {
-        super();
-        this.sortAlgorithm = sortAlgorithm;
-    }
 
     public int binarySearch(int[] numbers, int numberToSearch) {
 
